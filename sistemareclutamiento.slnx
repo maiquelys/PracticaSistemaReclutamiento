@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Reclutamiento.Datos/Reclutamiento.Datos.csproj" />
+  <Project Path="Reclutamiento.Negocios/Reclutamiento.Negocios.csproj" Id="9a8d61e5-b666-4182-9362-c865a8cf4e0c" />
+  <Project Path="Reclutamiento.Presentacion/Reclutamiento.Presentacion.csproj" Id="004d06e2-89be-4e77-9d1f-1c6175430b3f" />
+</Solution>
