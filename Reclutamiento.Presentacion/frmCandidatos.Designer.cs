@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             grpDatos = new GroupBox();
-            label1 = new Label();
-            txtCedula = new TextBox();
-            label2 = new Label();
-            txtNombre = new TextBox();
-            label3 = new Label();
-            txtEmail = new TextBox();
-            label4 = new Label();
-            txtTelefono = new TextBox();
             chkEsInterno = new CheckBox();
+            txtTelefono = new TextBox();
+            label4 = new Label();
+            txtEmail = new TextBox();
+            label3 = new Label();
+            txtNombre = new TextBox();
+            label2 = new Label();
+            txtCedula = new TextBox();
+            label1 = new Label();
             btnGuardar = new Button();
             btnEliminar = new Button();
             btnLimpiar = new Button();
@@ -48,6 +48,7 @@
             // 
             // grpDatos
             // 
+            grpDatos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             grpDatos.Controls.Add(chkEsInterno);
             grpDatos.Controls.Add(txtTelefono);
             grpDatos.Controls.Add(label4);
@@ -64,70 +65,6 @@
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos del Candidato";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(10, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(55, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Cedula";
-            // 
-            // txtCedula
-            // 
-            txtCedula.Location = new Point(100, 27);
-            txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(200, 27);
-            txtCedula.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(67, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Nombre:";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(100, 62);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 27);
-            txtNombre.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 100);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Email:";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(100, 97);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(200, 27);
-            txtEmail.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(10, 135);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Telefono:";
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(100, 132);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(200, 27);
-            txtTelefono.TabIndex = 7;
-            // 
             // chkEsInterno
             // 
             chkEsInterno.AutoSize = true;
@@ -138,6 +75,70 @@
             chkEsInterno.Text = "Es Interno";
             chkEsInterno.UseVisualStyleBackColor = true;
             // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(100, 132);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(200, 27);
+            txtTelefono.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(10, 135);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 6;
+            label4.Text = "Telefono:";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(100, 97);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(200, 27);
+            txtEmail.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 100);
+            label3.Name = "label3";
+            label3.Size = new Size(49, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Email:";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(100, 62);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(200, 27);
+            txtNombre.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Nombre:";
+            // 
+            // txtCedula
+            // 
+            txtCedula.Location = new Point(100, 27);
+            txtCedula.Name = "txtCedula";
+            txtCedula.Size = new Size(200, 27);
+            txtCedula.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(10, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Cedula";
+            // 
             // btnGuardar
             // 
             btnGuardar.Location = new Point(10, 240);
@@ -146,6 +147,7 @@
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
@@ -155,6 +157,7 @@
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -164,6 +167,7 @@
             btnLimpiar.TabIndex = 3;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // dgvCandidatos
             // 
@@ -189,6 +193,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Candidatos";
             WindowState = FormWindowState.Maximized;
+            Load += frmCandidatos_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidatos).EndInit();

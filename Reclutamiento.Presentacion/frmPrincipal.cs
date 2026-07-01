@@ -30,5 +30,10 @@ namespace Reclutamiento.Presentacion
             login.Show();
             this.Close();
         }
+
+        private void btnEntrevista_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
