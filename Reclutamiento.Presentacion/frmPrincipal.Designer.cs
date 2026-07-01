@@ -66,6 +66,7 @@
             btnVacantes.TabIndex = 2;
             btnVacantes.Text = "Vacantes";
             btnVacantes.UseVisualStyleBackColor = true;
+            btnVacantes.Click += btnVacantes_Click;
             // 
             // btnEntrevista
             // 
