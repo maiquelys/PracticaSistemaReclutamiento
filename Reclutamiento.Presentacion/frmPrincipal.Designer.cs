@@ -77,7 +77,7 @@
             btnEntrevista.TabIndex = 3;
             btnEntrevista.Text = "Entrevistas";
             btnEntrevista.UseVisualStyleBackColor = true;
-            btnEntrevista.Click += btnEntrevista_Click;
+            btnEntrevista.Click += btnEntrevistas_Click;
             // 
             // btnCerrarSesion
             // 

@@ -10,13 +10,13 @@
         public decimal Puntuacion { get; set; }
 
         //constructor
-        public Entrevista(int candidatoID, int vacanteID, int etapaID, decimal ountuacion)
+        public Entrevista(int candidatoID, int vacanteID, int etapaID, decimal puntuacion)
         {
             this.CandidatoID = candidatoID;
             this.VacanteID = vacanteID;
             this.EtapaID = etapaID;
             this.Fecha = DateTime.Now;
-            this.Puntuacion = Puntuacion;
+            this.Puntuacion = puntuacion;
         }
         public Entrevista()
         {
