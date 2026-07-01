@@ -49,7 +49,7 @@
             // 
             // grpDatos
             // 
-            grpDatos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpDatos.Anchor = AnchorStyles.None;
             grpDatos.Controls.Add(chkEsInterno);
             grpDatos.Controls.Add(txtTelefono);
             grpDatos.Controls.Add(label4);
@@ -59,9 +59,10 @@
             grpDatos.Controls.Add(label2);
             grpDatos.Controls.Add(txtCedula);
             grpDatos.Controls.Add(label1);
-            grpDatos.Location = new Point(10, 10);
+            grpDatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpDatos.Location = new Point(12, 23);
             grpDatos.Name = "grpDatos";
-            grpDatos.Size = new Size(400, 220);
+            grpDatos.Size = new Size(758, 158);
             grpDatos.TabIndex = 0;
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos del Candidato";
@@ -69,32 +70,35 @@
             // chkEsInterno
             // 
             chkEsInterno.AutoSize = true;
-            chkEsInterno.Location = new Point(100, 170);
+            chkEsInterno.Location = new Point(338, 134);
             chkEsInterno.Name = "chkEsInterno";
-            chkEsInterno.Size = new Size(96, 24);
+            chkEsInterno.Size = new Size(102, 24);
             chkEsInterno.TabIndex = 8;
             chkEsInterno.Text = "Es Interno";
             chkEsInterno.UseVisualStyleBackColor = true;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(100, 132);
+            txtTelefono.BackColor = SystemColors.InactiveCaption;
+            txtTelefono.Location = new Point(505, 84);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(200, 27);
             txtTelefono.TabIndex = 7;
+            txtTelefono.TextChanged += txtTelefono_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(10, 135);
+            label4.Location = new Point(425, 84);
             label4.Name = "label4";
-            label4.Size = new Size(70, 20);
+            label4.Size = new Size(74, 20);
             label4.TabIndex = 6;
             label4.Text = "Telefono:";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(100, 97);
+            txtEmail.BackColor = SystemColors.InactiveCaption;
+            txtEmail.Location = new Point(505, 26);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(200, 27);
             txtEmail.TabIndex = 5;
@@ -102,15 +106,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(10, 100);
+            label3.Location = new Point(448, 30);
             label3.Name = "label3";
-            label3.Size = new Size(49, 20);
+            label3.Size = new Size(51, 20);
             label3.TabIndex = 4;
             label3.Text = "Email:";
+            label3.Click += label3_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(100, 62);
+            txtNombre.BackColor = SystemColors.InactiveCaption;
+            txtNombre.Location = new Point(138, 84);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(200, 27);
             txtNombre.TabIndex = 3;
@@ -118,51 +124,63 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(10, 65);
+            label2.Location = new Point(61, 84);
             label2.Name = "label2";
-            label2.Size = new Size(67, 20);
+            label2.Size = new Size(71, 20);
             label2.TabIndex = 2;
             label2.Text = "Nombre:";
+            label2.Click += label2_Click;
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(100, 27);
+            txtCedula.BackColor = SystemColors.InactiveCaption;
+            txtCedula.Location = new Point(138, 30);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(200, 27);
             txtCedula.TabIndex = 1;
+            txtCedula.TextChanged += txtCedula_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(10, 30);
+            label1.Location = new Point(72, 33);
             label1.Name = "label1";
-            label1.Size = new Size(55, 20);
+            label1.Size = new Size(60, 20);
             label1.TabIndex = 0;
-            label1.Text = "Cedula";
+            label1.Text = "Cedula:";
+            label1.Click += label1_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(10, 240);
+            btnGuardar.Anchor = AnchorStyles.None;
+            btnGuardar.BackColor = Color.FromArgb(192, 255, 192);
+            btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.Location = new Point(172, 187);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(120, 240);
+            btnEliminar.Anchor = AnchorStyles.None;
+            btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(324, 187);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(230, 240);
+            btnLimpiar.Anchor = AnchorStyles.None;
+            btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.Location = new Point(473, 187);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
@@ -172,17 +190,18 @@
             // 
             // dgvCandidatos
             // 
-            dgvCandidatos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCandidatos.Anchor = AnchorStyles.None;
             dgvCandidatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCandidatos.Location = new Point(10, 290);
+            dgvCandidatos.Location = new Point(25, 228);
             dgvCandidatos.Name = "dgvCandidatos";
             dgvCandidatos.RowHeadersWidth = 51;
-            dgvCandidatos.Size = new Size(760, 150);
+            dgvCandidatos.Size = new Size(733, 174);
             dgvCandidatos.TabIndex = 4;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(517, 109);
+            btnVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnVolver.Location = new Point(664, 412);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(94, 29);
             btnVolver.TabIndex = 5;
@@ -194,6 +213,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(782, 453);
             Controls.Add(btnVolver);
             Controls.Add(dgvCandidatos);
@@ -204,7 +224,6 @@
             Name = "frmCandidatos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Candidatos";
-            WindowState = FormWindowState.Maximized;
             Load += frmCandidatos_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();

@@ -38,11 +38,12 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(250, 60);
+            label1.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(178, 58);
             label1.Name = "label1";
-            label1.Size = new Size(257, 20);
+            label1.Size = new Size(427, 31);
             label1.TabIndex = 0;
             label1.Text = "Sistema de Gestion de Reclutamiento";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -50,61 +51,74 @@
             // btnCandidatos
             // 
             btnCandidatos.Anchor = AnchorStyles.None;
+            btnCandidatos.BackColor = Color.CornflowerBlue;
+            btnCandidatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCandidatos.Location = new Point(39, 150);
             btnCandidatos.Name = "btnCandidatos";
             btnCandidatos.Size = new Size(154, 133);
             btnCandidatos.TabIndex = 1;
             btnCandidatos.Text = "Candidatos";
-            btnCandidatos.UseVisualStyleBackColor = true;
+            btnCandidatos.UseVisualStyleBackColor = false;
             btnCandidatos.Click += btnCandidatos_Click;
             // 
             // btnVacantes
             // 
             btnVacantes.Anchor = AnchorStyles.None;
-            btnVacantes.Location = new Point(226, 150);
+            btnVacantes.BackColor = Color.CornflowerBlue;
+            btnVacantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVacantes.Location = new Point(223, 150);
             btnVacantes.Name = "btnVacantes";
-            btnVacantes.Size = new Size(150, 133);
+            btnVacantes.Size = new Size(154, 133);
             btnVacantes.TabIndex = 2;
             btnVacantes.Text = "Vacantes";
-            btnVacantes.UseVisualStyleBackColor = true;
+            btnVacantes.UseVisualStyleBackColor = false;
             btnVacantes.Click += btnVacantes_Click;
             // 
             // btnEntrevista
             // 
             btnEntrevista.Anchor = AnchorStyles.None;
-            btnEntrevista.Location = new Point(424, 150);
+            btnEntrevista.BackColor = Color.CornflowerBlue;
+            btnEntrevista.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEntrevista.Location = new Point(410, 150);
             btnEntrevista.Name = "btnEntrevista";
-            btnEntrevista.Size = new Size(148, 133);
+            btnEntrevista.Size = new Size(154, 133);
             btnEntrevista.TabIndex = 3;
             btnEntrevista.Text = "Entrevistas";
-            btnEntrevista.UseVisualStyleBackColor = true;
+            btnEntrevista.UseVisualStyleBackColor = false;
             btnEntrevista.Click += btnEntrevistas_Click;
             // 
             // btnCerrarSesion
             // 
             btnCerrarSesion.Anchor = AnchorStyles.Bottom;
+            btnCerrarSesion.BackColor = Color.MidnightBlue;
+            btnCerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCerrarSesion.ForeColor = SystemColors.ButtonHighlight;
             btnCerrarSesion.Location = new Point(289, 350);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(150, 40);
             btnCerrarSesion.TabIndex = 4;
             btnCerrarSesion.Text = "Cerrar Sesion";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // btnDecision
             // 
+            btnDecision.Anchor = AnchorStyles.None;
+            btnDecision.BackColor = Color.CornflowerBlue;
+            btnDecision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDecision.Location = new Point(596, 150);
             btnDecision.Name = "btnDecision";
-            btnDecision.Size = new Size(174, 133);
+            btnDecision.Size = new Size(154, 133);
             btnDecision.TabIndex = 5;
             btnDecision.Text = "Decision Final";
-            btnDecision.UseVisualStyleBackColor = true;
+            btnDecision.UseVisualStyleBackColor = false;
             btnDecision.Click += btnDecision_Click;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(782, 453);
             Controls.Add(btnDecision);
             Controls.Add(btnCerrarSesion);
@@ -115,7 +129,6 @@
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Reclutamiento";
-            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }

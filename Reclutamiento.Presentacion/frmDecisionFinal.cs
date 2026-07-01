@@ -109,5 +109,25 @@ namespace Reclutamiento.Presentacion
         {
             this.Close();
         }
+
+        private void cboVacante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboDecision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblVacante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDecision_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -119,5 +119,15 @@ namespace Reclutamiento.Presentacion
         {
             this.Close();
         }
+
+        private void txtPuntuacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCandidato_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
