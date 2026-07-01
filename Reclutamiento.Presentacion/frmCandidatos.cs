@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Reclutamiento.Presentacion
+{
+    public partial class frmCandidatos : Form
+    {
+        public frmCandidatos()
+        {
+            InitializeComponent();
+        }
+    }
+}

@@ -16,7 +16,7 @@ namespace Reclutamiento.Presentacion
         }
         private void btnVacantes_Click(object sender, EventArgs e)
         {
-            frmEntrevistas frm = new frmVacantes();
+            frmVacantes frm = new frmVacantes();
             frm.Show();
         }
         private void btnEntrevistas_Click(object sender, EventArgs e)
