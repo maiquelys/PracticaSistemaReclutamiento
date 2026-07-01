@@ -1,6 +1,6 @@
 ﻿namespace Reclutamiento.Presentacion
 {
-    partial class frmEntrevistas
+    partial class frmDecisionFinal
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -18,17 +18,17 @@
             cboCandidato = new ComboBox();
             lblVacante = new Label();
             cboVacante = new ComboBox();
-            lblEtapa = new Label();
-            cboEtapa = new ComboBox();
-            lblPuntuacion = new Label();
-            txtPuntuacion = new TextBox();
+            lblDecision = new Label();
+            cboDecision = new ComboBox();
+            lblComentario = new Label();
+            txtComentario = new TextBox();
             btnGuardar = new Button();
             btnEliminar = new Button();
             btnLimpiar = new Button();
-            dgvEntrevistas = new DataGridView();
+            dgvDecisiones = new DataGridView();
             btnVolver = new Button();
             grpDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEntrevistas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDecisiones).BeginInit();
             SuspendLayout();
             // 
             // grpDatos
@@ -38,16 +38,16 @@
             grpDatos.Controls.Add(cboCandidato);
             grpDatos.Controls.Add(lblVacante);
             grpDatos.Controls.Add(cboVacante);
-            grpDatos.Controls.Add(lblEtapa);
-            grpDatos.Controls.Add(cboEtapa);
-            grpDatos.Controls.Add(lblPuntuacion);
-            grpDatos.Controls.Add(txtPuntuacion);
+            grpDatos.Controls.Add(lblDecision);
+            grpDatos.Controls.Add(cboDecision);
+            grpDatos.Controls.Add(lblComentario);
+            grpDatos.Controls.Add(txtComentario);
             grpDatos.Location = new Point(10, 10);
             grpDatos.Name = "grpDatos";
-            grpDatos.Size = new Size(760, 160);
+            grpDatos.Size = new Size(760, 180);
             grpDatos.TabIndex = 0;
             grpDatos.TabStop = false;
-            grpDatos.Text = "Datos de la Entrevista";
+            grpDatos.Text = "Decision Final";
             // 
             // lblCandidato
             // 
@@ -83,44 +83,44 @@
             cboVacante.Size = new Size(250, 28);
             cboVacante.TabIndex = 3;
             // 
-            // lblEtapa
+            // lblDecision
             // 
-            lblEtapa.AutoSize = true;
-            lblEtapa.Location = new Point(10, 100);
-            lblEtapa.Name = "lblEtapa";
-            lblEtapa.Size = new Size(50, 20);
-            lblEtapa.TabIndex = 4;
-            lblEtapa.Text = "Etapa:";
+            lblDecision.AutoSize = true;
+            lblDecision.Location = new Point(10, 100);
+            lblDecision.Name = "lblDecision";
+            lblDecision.Size = new Size(69, 20);
+            lblDecision.TabIndex = 4;
+            lblDecision.Text = "Decision:";
             // 
-            // cboEtapa
+            // cboDecision
             // 
-            cboEtapa.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEtapa.Location = new Point(100, 97);
-            cboEtapa.Name = "cboEtapa";
-            cboEtapa.Size = new Size(250, 28);
-            cboEtapa.TabIndex = 5;
+            cboDecision.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDecision.Location = new Point(100, 97);
+            cboDecision.Name = "cboDecision";
+            cboDecision.Size = new Size(150, 28);
+            cboDecision.TabIndex = 5;
             // 
-            // lblPuntuacion
+            // lblComentario
             // 
-            lblPuntuacion.AutoSize = true;
-            lblPuntuacion.Location = new Point(10, 135);
-            lblPuntuacion.Name = "lblPuntuacion";
-            lblPuntuacion.Size = new Size(85, 20);
-            lblPuntuacion.TabIndex = 6;
-            lblPuntuacion.Text = "Puntuacion:";
+            lblComentario.AutoSize = true;
+            lblComentario.Location = new Point(10, 135);
+            lblComentario.Name = "lblComentario";
+            lblComentario.Size = new Size(90, 20);
+            lblComentario.TabIndex = 6;
+            lblComentario.Text = "Comentario:";
             // 
-            // txtPuntuacion
+            // txtComentario
             // 
-            txtPuntuacion.Location = new Point(100, 132);
-            txtPuntuacion.Name = "txtPuntuacion";
-            txtPuntuacion.Size = new Size(100, 27);
-            txtPuntuacion.TabIndex = 7;
+            txtComentario.Location = new Point(100, 132);
+            txtComentario.Name = "txtComentario";
+            txtComentario.Size = new Size(400, 27);
+            txtComentario.TabIndex = 7;
             // 
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.DarkBlue;
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(10, 180);
+            btnGuardar.Location = new Point(10, 200);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
@@ -132,7 +132,7 @@
             // 
             btnEliminar.BackColor = Color.DarkRed;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(120, 180);
+            btnEliminar.Location = new Point(120, 200);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
@@ -142,26 +142,26 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(230, 180);
+            btnLimpiar.Location = new Point(230, 200);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // dgvEntrevistas
+            // dgvDecisiones
             // 
-            dgvEntrevistas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvEntrevistas.ColumnHeadersHeight = 29;
-            dgvEntrevistas.Location = new Point(10, 225);
-            dgvEntrevistas.Name = "dgvEntrevistas";
-            dgvEntrevistas.RowHeadersWidth = 51;
-            dgvEntrevistas.Size = new Size(760, 200);
-            dgvEntrevistas.TabIndex = 4;
+            dgvDecisiones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvDecisiones.ColumnHeadersHeight = 29;
+            dgvDecisiones.Location = new Point(10, 245);
+            dgvDecisiones.Name = "dgvDecisiones";
+            dgvDecisiones.RowHeadersWidth = 51;
+            dgvDecisiones.Size = new Size(760, 200);
+            dgvDecisiones.TabIndex = 4;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(124, 447);
+            btnVolver.Location = new Point(288, 460);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(94, 29);
             btnVolver.TabIndex = 5;
@@ -169,7 +169,7 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // frmEntrevistas
+            // frmDecisionFinal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -179,15 +179,15 @@
             Controls.Add(btnGuardar);
             Controls.Add(btnEliminar);
             Controls.Add(btnLimpiar);
-            Controls.Add(dgvEntrevistas);
-            Name = "frmEntrevistas";
+            Controls.Add(dgvDecisiones);
+            Name = "frmDecisionFinal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestion de Entrevistas";
+            Text = "Decision Final";
             WindowState = FormWindowState.Maximized;
-            Load += frmEntrevistas_Load;
+            Load += frmDecisionFinal_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEntrevistas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDecisiones).EndInit();
             ResumeLayout(false);
         }
 
@@ -196,14 +196,14 @@
         private ComboBox cboCandidato;
         private Label lblVacante;
         private ComboBox cboVacante;
-        private Label lblEtapa;
-        private ComboBox cboEtapa;
-        private Label lblPuntuacion;
-        private TextBox txtPuntuacion;
+        private Label lblDecision;
+        private ComboBox cboDecision;
+        private Label lblComentario;
+        private TextBox txtComentario;
         private Button btnGuardar;
         private Button btnEliminar;
         private Button btnLimpiar;
-        private DataGridView dgvEntrevistas;
+        private DataGridView dgvDecisiones;
         private Button btnVolver;
     }
 }

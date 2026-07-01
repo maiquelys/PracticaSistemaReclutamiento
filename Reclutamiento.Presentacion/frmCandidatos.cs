@@ -79,5 +79,10 @@ namespace Reclutamiento.Presentacion
         {
             dgvCandidatos.DataSource = _servicio.ObtenerCandidatos();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -33,6 +33,7 @@
             btnVacantes = new Button();
             btnEntrevista = new Button();
             btnCerrarSesion = new Button();
+            btnDecision = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             btnCandidatos.Anchor = AnchorStyles.None;
             btnCandidatos.Location = new Point(39, 150);
             btnCandidatos.Name = "btnCandidatos";
-            btnCandidatos.Size = new Size(200, 133);
+            btnCandidatos.Size = new Size(154, 133);
             btnCandidatos.TabIndex = 1;
             btnCandidatos.Text = "Candidatos";
             btnCandidatos.UseVisualStyleBackColor = true;
@@ -60,9 +61,9 @@
             // btnVacantes
             // 
             btnVacantes.Anchor = AnchorStyles.None;
-            btnVacantes.Location = new Point(289, 150);
+            btnVacantes.Location = new Point(226, 150);
             btnVacantes.Name = "btnVacantes";
-            btnVacantes.Size = new Size(200, 133);
+            btnVacantes.Size = new Size(150, 133);
             btnVacantes.TabIndex = 2;
             btnVacantes.Text = "Vacantes";
             btnVacantes.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // btnEntrevista
             // 
             btnEntrevista.Anchor = AnchorStyles.None;
-            btnEntrevista.Location = new Point(550, 150);
+            btnEntrevista.Location = new Point(424, 150);
             btnEntrevista.Name = "btnEntrevista";
-            btnEntrevista.Size = new Size(200, 133);
+            btnEntrevista.Size = new Size(148, 133);
             btnEntrevista.TabIndex = 3;
             btnEntrevista.Text = "Entrevistas";
             btnEntrevista.UseVisualStyleBackColor = true;
@@ -89,11 +90,22 @@
             btnCerrarSesion.Text = "Cerrar Sesion";
             btnCerrarSesion.UseVisualStyleBackColor = true;
             // 
+            // btnDecision
+            // 
+            btnDecision.Location = new Point(596, 150);
+            btnDecision.Name = "btnDecision";
+            btnDecision.Size = new Size(174, 133);
+            btnDecision.TabIndex = 5;
+            btnDecision.Text = "Decision Final";
+            btnDecision.UseVisualStyleBackColor = true;
+            btnDecision.Click += btnDecision_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 453);
+            Controls.Add(btnDecision);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnEntrevista);
             Controls.Add(btnVacantes);
@@ -114,5 +126,6 @@
         private Button btnVacantes;
         private Button btnEntrevista;
         private Button btnCerrarSesion;
+        private Button btnDecision;
     }
 }

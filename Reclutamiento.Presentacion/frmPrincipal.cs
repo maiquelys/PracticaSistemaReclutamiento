@@ -9,33 +9,51 @@ namespace Reclutamiento.Presentacion
         {
             InitializeComponent();
         }
+
         private void btnCandidatos_Click(object sender, EventArgs e)
         {
             frmCandidatos frm = new frmCandidatos();
-            frm.Show();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
+
         private void btnVacantes_Click(object sender, EventArgs e)
         {
             try
             {
                 frmVacantes frm = new frmVacantes();
+                this.Hide();
                 frm.ShowDialog();
+                this.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
         private void btnEntrevistas_Click(object sender, EventArgs e)
         {
             frmEntrevistas frm = new frmEntrevistas();
-            frm.Show();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
+
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
+        }
+
+        private void btnDecision_Click(object sender, EventArgs e)
+        {
+            frmDecisionFinal frm = new frmDecisionFinal();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

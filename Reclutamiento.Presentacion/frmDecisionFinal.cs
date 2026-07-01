@@ -5,45 +5,42 @@ using Reclutamiento.Datos;
 
 namespace Reclutamiento.Presentacion
 {
-    public partial class frmEntrevistas : Form
+    public partial class frmDecisionFinal : Form
     {
-        private EntrevistaServicio _servicio = new EntrevistaServicio();
+        private DecisionFinalServicio _servicio = new DecisionFinalServicio();
         private CandidatoServicio _candidatoServicio = new CandidatoServicio();
         private VacanteServicio _vacanteServicio = new VacanteServicio();
 
-        public frmEntrevistas()
+        public frmDecisionFinal()
         {
             InitializeComponent();
         }
 
-        private void frmEntrevistas_Load(object sender, EventArgs e)
+        private void frmDecisionFinal_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            CargarEntrevistas();
+            CargarDecisiones();
         }
 
         private void CargarCombos()
         {
-            // cargar candidatos en combo
             cboCandidato.DataSource = _candidatoServicio.ObtenerCandidatos();
             cboCandidato.DisplayMember = "Nombre";
             cboCandidato.ValueMember = "CandidatoID";
 
-            // cargar vacantes en combo
             cboVacante.DataSource = _vacanteServicio.ObtenerVacantes();
             cboVacante.DisplayMember = "Titulo";
             cboVacante.ValueMember = "VacanteID";
 
-            // cargar etapas
-            cboEtapa.Items.Add("Entrevista inicial");
-            cboEtapa.Items.Add("Prueba tecnica");
-            cboEtapa.Items.Add("Entrevista final");
-            cboEtapa.SelectedIndex = 0;
+            cboDecision.Items.Add("Contratado");
+            cboDecision.Items.Add("Rechazado");
+            cboDecision.Items.Add("En espera");
+            cboDecision.SelectedIndex = 0;
         }
 
-        private void CargarEntrevistas()
+        private void CargarDecisiones()
         {
-            dgvEntrevistas.DataSource = _servicio.ObtenerEntrevistas();
+            dgvDecisiones.DataSource = _servicio.ObtenerDecisiones();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -57,23 +54,16 @@ namespace Reclutamiento.Presentacion
                     return;
                 }
 
-                if (!decimal.TryParse(txtPuntuacion.Text, out decimal puntuacion))
-                {
-                    MessageBox.Show("La puntuacion debe ser un numero.", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                _servicio.RegistrarEntrevista(
+                _servicio.RegistrarDecision(
                     (int)cboCandidato.SelectedValue,
                     (int)cboVacante.SelectedValue,
-                    cboEtapa.SelectedIndex + 1,
-                    puntuacion
+                    cboDecision.SelectedItem.ToString(),
+                    txtComentario.Text
                 );
 
-                MessageBox.Show("Entrevista guardada exitosamente.", "Exito",
+                MessageBox.Show("Decision guardada exitosamente.", "Exito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarEntrevistas();
+                CargarDecisiones();
                 Limpiar();
             }
             catch (Exception ex)
@@ -85,21 +75,21 @@ namespace Reclutamiento.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvEntrevistas.SelectedRows.Count == 0)
+            if (dgvDecisiones.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecciona una entrevista para eliminar.", "Aviso",
+                MessageBox.Show("Selecciona una decision para eliminar.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int id = (int)dgvEntrevistas.SelectedRows[0].Cells["EntrevistaID"].Value;
-            DialogResult confirm = MessageBox.Show("Estas segura de eliminar esta entrevista?", "Confirmar",
+            int id = (int)dgvDecisiones.SelectedRows[0].Cells["DecisionID"].Value;
+            DialogResult confirm = MessageBox.Show("Estas segura de eliminar esta decision?", "Confirmar",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirm == DialogResult.Yes)
             {
-                _servicio.EliminarEntrevista(id);
-                CargarEntrevistas();
+                _servicio.EliminarDecision(id);
+                CargarDecisiones();
             }
         }
 
@@ -110,9 +100,9 @@ namespace Reclutamiento.Presentacion
 
         private void Limpiar()
         {
-            txtPuntuacion.Clear();
-            cboEtapa.SelectedIndex = 0;
-            txtPuntuacion.Focus();
+            txtComentario.Clear();
+            cboDecision.SelectedIndex = 0;
+            txtComentario.Focus();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

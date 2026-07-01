@@ -42,6 +42,7 @@
             btnEliminar = new Button();
             btnLimpiar = new Button();
             dgvCandidatos = new DataGridView();
+            btnVolver = new Button();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidatos).BeginInit();
             SuspendLayout();
@@ -179,11 +180,22 @@
             dgvCandidatos.Size = new Size(760, 150);
             dgvCandidatos.TabIndex = 4;
             // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(517, 109);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(94, 29);
+            btnVolver.TabIndex = 5;
+            btnVolver.Text = "← Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // frmCandidatos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 453);
+            Controls.Add(btnVolver);
             Controls.Add(dgvCandidatos);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
@@ -216,5 +228,6 @@
         private Button btnEliminar;
         private Button btnLimpiar;
         private DataGridView dgvCandidatos;
+        private Button btnVolver;
     }
 }

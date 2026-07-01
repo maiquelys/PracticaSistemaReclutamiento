@@ -74,12 +74,17 @@ namespace Reclutamiento.Presentacion
             Limpiar();
         }
         private void Limpiar()
-{
-    txtTitulo.Clear();
-    txtDescripcion.Clear();
-    txtDepartamento.Clear();
-    cboEstado.SelectedIndex = 0;
-    txtTitulo.Focus();
-}
+        {
+            txtTitulo.Clear();
+            txtDescripcion.Clear();
+            txtDepartamento.Clear();
+            cboEstado.SelectedIndex = 0;
+            txtTitulo.Focus();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

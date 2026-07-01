@@ -8,6 +8,7 @@ namespace Reclutamiento.Presentacion
         public frmLogin()
         {
             InitializeComponent();
+            this.AcceptButton = btnLogin;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

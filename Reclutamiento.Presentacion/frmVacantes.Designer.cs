@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             grpDatos = new GroupBox();
-            label1 = new Label();
-            txtTitulo = new TextBox();
-            label2 = new Label();
-            txtDescripcion = new TextBox();
-            label3 = new Label();
-            txtDepartamento = new TextBox();
-            label4 = new Label();
             cboEstado = new ComboBox();
+            label4 = new Label();
+            txtDepartamento = new TextBox();
+            label3 = new Label();
+            txtDescripcion = new TextBox();
+            label2 = new Label();
+            txtTitulo = new TextBox();
+            label1 = new Label();
             btnGuardar = new Button();
             btnEliminar = new Button();
             btnLimpiar = new Button();
             dgvVacantes = new DataGridView();
+            btnVolver = new Button();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVacantes).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             // grpDatos
             // 
             grpDatos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpDatos.Controls.Add(btnVolver);
             grpDatos.Controls.Add(cboEstado);
             grpDatos.Controls.Add(label4);
             grpDatos.Controls.Add(txtDepartamento);
@@ -63,53 +65,15 @@
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos de la Vacante";
             // 
-            // label1
+            // cboEstado
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(10, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Titulo:";
-            // 
-            // txtTitulo
-            // 
-            txtTitulo.Location = new Point(100, 27);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(300, 27);
-            txtTitulo.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(90, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Descripcion:";
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(100, 62);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(300, 27);
-            txtDescripcion.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 100);
-            label3.Name = "label3";
-            label3.Size = new Size(109, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Departamento:";
-            // 
-            // txtDepartamento
-            // 
-            txtDepartamento.Location = new Point(100, 97);
-            txtDepartamento.Name = "txtDepartamento";
-            txtDepartamento.Size = new Size(300, 27);
-            txtDepartamento.TabIndex = 5;
+            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Items.AddRange(new object[] { "Activa", "Cerrada", "En proceso" });
+            cboEstado.Location = new Point(100, 132);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(150, 28);
+            cboEstado.TabIndex = 7;
             // 
             // label4
             // 
@@ -120,15 +84,53 @@
             label4.TabIndex = 6;
             label4.Text = "Estado:";
             // 
-            // cboEstado
+            // txtDepartamento
             // 
-            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEstado.FormattingEnabled = true;
-            cboEstado.Items.AddRange(new object[] { "Activa", "Cerrada", "En proceso" });
-            cboEstado.Location = new Point(100, 132);
-            cboEstado.Name = "cboEstado";
-            cboEstado.Size = new Size(150, 28);
-            cboEstado.TabIndex = 7;
+            txtDepartamento.Location = new Point(100, 97);
+            txtDepartamento.Name = "txtDepartamento";
+            txtDepartamento.Size = new Size(300, 27);
+            txtDepartamento.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 100);
+            label3.Name = "label3";
+            label3.Size = new Size(109, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Departamento:";
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(100, 62);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(300, 27);
+            txtDescripcion.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Descripcion:";
+            // 
+            // txtTitulo
+            // 
+            txtTitulo.Location = new Point(100, 27);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(300, 27);
+            txtTitulo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(10, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Titulo:";
             // 
             // btnGuardar
             // 
@@ -170,6 +172,16 @@
             dgvVacantes.Size = new Size(760, 180);
             dgvVacantes.TabIndex = 4;
             // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(478, 135);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(94, 29);
+            btnVolver.TabIndex = 8;
+            btnVolver.Text = "← Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // frmVacantes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,5 +218,6 @@
         private Button btnEliminar;
         private Button btnLimpiar;
         private DataGridView dgvVacantes;
+        private Button btnVolver;
     }
 }
