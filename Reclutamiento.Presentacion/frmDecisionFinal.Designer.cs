@@ -194,6 +194,7 @@
             Name = "frmDecisionFinal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Decision Final";
+            WindowState = FormWindowState.Minimized;
             Load += frmDecisionFinal_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();

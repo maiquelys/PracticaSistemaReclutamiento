@@ -100,6 +100,7 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Reclutamiento - Login";
+            WindowState = FormWindowState.Minimized;
             ResumeLayout(false);
             PerformLayout();
         }

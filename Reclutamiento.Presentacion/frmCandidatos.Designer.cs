@@ -224,6 +224,7 @@
             Name = "frmCandidatos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Candidatos";
+            WindowState = FormWindowState.Minimized;
             Load += frmCandidatos_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
