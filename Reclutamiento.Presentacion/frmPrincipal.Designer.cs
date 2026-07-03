@@ -34,6 +34,7 @@
             btnEntrevista = new Button();
             btnCerrarSesion = new Button();
             btnDecision = new Button();
+            btnReportes = new Button();
             SuspendLayout();
             // 
             // label1
@@ -53,7 +54,7 @@
             btnCandidatos.Anchor = AnchorStyles.None;
             btnCandidatos.BackColor = Color.CornflowerBlue;
             btnCandidatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCandidatos.Location = new Point(39, 150);
+            btnCandidatos.Location = new Point(111, 126);
             btnCandidatos.Name = "btnCandidatos";
             btnCandidatos.Size = new Size(154, 133);
             btnCandidatos.TabIndex = 1;
@@ -66,7 +67,7 @@
             btnVacantes.Anchor = AnchorStyles.None;
             btnVacantes.BackColor = Color.CornflowerBlue;
             btnVacantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVacantes.Location = new Point(223, 150);
+            btnVacantes.Location = new Point(291, 123);
             btnVacantes.Name = "btnVacantes";
             btnVacantes.Size = new Size(154, 133);
             btnVacantes.TabIndex = 2;
@@ -79,7 +80,7 @@
             btnEntrevista.Anchor = AnchorStyles.None;
             btnEntrevista.BackColor = Color.CornflowerBlue;
             btnEntrevista.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrevista.Location = new Point(410, 150);
+            btnEntrevista.Location = new Point(466, 126);
             btnEntrevista.Name = "btnEntrevista";
             btnEntrevista.Size = new Size(154, 133);
             btnEntrevista.TabIndex = 3;
@@ -93,7 +94,7 @@
             btnCerrarSesion.BackColor = Color.MidnightBlue;
             btnCerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrarSesion.ForeColor = SystemColors.ButtonHighlight;
-            btnCerrarSesion.Location = new Point(289, 350);
+            btnCerrarSesion.Location = new Point(295, 401);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(150, 40);
             btnCerrarSesion.TabIndex = 4;
@@ -106,7 +107,7 @@
             btnDecision.Anchor = AnchorStyles.None;
             btnDecision.BackColor = Color.CornflowerBlue;
             btnDecision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDecision.Location = new Point(596, 150);
+            btnDecision.Location = new Point(209, 262);
             btnDecision.Name = "btnDecision";
             btnDecision.Size = new Size(154, 133);
             btnDecision.TabIndex = 5;
@@ -114,12 +115,26 @@
             btnDecision.UseVisualStyleBackColor = false;
             btnDecision.Click += btnDecision_Click;
             // 
+            // btnReportes
+            // 
+            btnReportes.Anchor = AnchorStyles.None;
+            btnReportes.BackColor = Color.CornflowerBlue;
+            btnReportes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReportes.Location = new Point(380, 262);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(154, 133);
+            btnReportes.TabIndex = 6;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += button1_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(782, 453);
+            Controls.Add(btnReportes);
             Controls.Add(btnDecision);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnEntrevista);
@@ -141,5 +156,6 @@
         private Button btnEntrevista;
         private Button btnCerrarSesion;
         private Button btnDecision;
+        private Button btnReportes;
     }
 }

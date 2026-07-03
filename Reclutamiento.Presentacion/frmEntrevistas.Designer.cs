@@ -196,7 +196,6 @@
             Name = "frmEntrevistas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Entrevistas";
-            WindowState = FormWindowState.Minimized;
             Load += frmEntrevistas_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();

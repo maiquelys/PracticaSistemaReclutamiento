@@ -53,5 +53,13 @@ namespace Reclutamiento.Presentacion
             frm.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmReportes frm = new frmReportes();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

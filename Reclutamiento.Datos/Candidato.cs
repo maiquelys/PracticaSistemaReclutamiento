@@ -7,6 +7,7 @@
         private string _nombre;
         private string _cedula;
 
+        //encapsulacion validando set
         public string Nombre
         {
             get { return _nombre; }
@@ -17,7 +18,7 @@
                 _nombre = value;
             }
         }
-
+        //encapsulacion validando set
         public string Cedula
         {
             get { return _cedula; }
@@ -29,19 +30,20 @@
             }
         }
 
-        //constructor
-
+        //constructor default
         public Persona()
         {
             this.Nombre = "Sin nombre";
             this.Cedula = "000-0000000-0";
         }
-        //constructor
+
+        //constructor parametrizado
         public Persona(string nombre, string cedula)
         {
             this.Nombre = nombre;
             this.Cedula = cedula;
         }
+
         //metodo abstracto
         public abstract double CalcularPuntuacion();
     }
@@ -54,6 +56,7 @@
         public string Telefono { get; set; }
         public bool EsInterno { get; set; }
 
+        //constructor parametrizado
         public Candidato(string cedula, string nombre, string email, string telefono, bool esInterno)
             : base(nombre, cedula)
         {
@@ -74,10 +77,42 @@
             //libera candidato de la memoria al finalizar
             Console.WriteLine($"Candidato {Nombre} eliminadodo de memoria");
         }
-        //override
+
+        //override y polimorfismo
         public override double CalcularPuntuacion()
         {
+            //operador ternario-- suma 10 si es interno, suma 0 si no es
             return EsInterno ? 10.0 : 0.0;
+        }
+    }
+
+    //herencia reclutador:persona
+    public class Reclutador : Persona
+    {
+        public int ReclutadorID { get; set; }
+        public string Departamento { get; set; }
+        public string Email { get; set; }
+
+        //constructor parametrizado
+        public Reclutador(string nombre, string cedula, string departamento, string email)
+            : base(nombre, cedula)
+        {
+            this.Departamento = departamento;
+            this.Email = email;
+        }
+
+        //constructor default
+        public Reclutador() : base()
+        {
+            this.Departamento = "RRHH";
+            this.Email = "sin@email.com";
+        }
+
+        //override y polimorfismo - comportamiento diferente al de candidato
+        public override double CalcularPuntuacion()
+        {
+            //reclutador siempre tiene puntuacion maxima por ser personal interno
+            return 100.0;
         }
     }
 }

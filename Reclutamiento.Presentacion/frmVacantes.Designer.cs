@@ -209,7 +209,6 @@
             Name = "frmVacantes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Vacantes";
-            WindowState = FormWindowState.Minimized;
             Load += frmVacantes_Load;
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
