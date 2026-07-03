@@ -54,7 +54,7 @@
             btnCandidatos.Anchor = AnchorStyles.None;
             btnCandidatos.BackColor = Color.CornflowerBlue;
             btnCandidatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCandidatos.Location = new Point(111, 126);
+            btnCandidatos.Location = new Point(136, 126);
             btnCandidatos.Name = "btnCandidatos";
             btnCandidatos.Size = new Size(154, 133);
             btnCandidatos.TabIndex = 1;
@@ -67,7 +67,7 @@
             btnVacantes.Anchor = AnchorStyles.None;
             btnVacantes.BackColor = Color.CornflowerBlue;
             btnVacantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVacantes.Location = new Point(291, 123);
+            btnVacantes.Location = new Point(311, 126);
             btnVacantes.Name = "btnVacantes";
             btnVacantes.Size = new Size(154, 133);
             btnVacantes.TabIndex = 2;
@@ -80,7 +80,7 @@
             btnEntrevista.Anchor = AnchorStyles.None;
             btnEntrevista.BackColor = Color.CornflowerBlue;
             btnEntrevista.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrevista.Location = new Point(466, 126);
+            btnEntrevista.Location = new Point(485, 126);
             btnEntrevista.Name = "btnEntrevista";
             btnEntrevista.Size = new Size(154, 133);
             btnEntrevista.TabIndex = 3;
@@ -107,7 +107,7 @@
             btnDecision.Anchor = AnchorStyles.None;
             btnDecision.BackColor = Color.CornflowerBlue;
             btnDecision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDecision.Location = new Point(209, 262);
+            btnDecision.Location = new Point(211, 262);
             btnDecision.Name = "btnDecision";
             btnDecision.Size = new Size(154, 133);
             btnDecision.TabIndex = 5;
@@ -120,7 +120,7 @@
             btnReportes.Anchor = AnchorStyles.None;
             btnReportes.BackColor = Color.CornflowerBlue;
             btnReportes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReportes.Location = new Point(380, 262);
+            btnReportes.Location = new Point(394, 262);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(154, 133);
             btnReportes.TabIndex = 6;

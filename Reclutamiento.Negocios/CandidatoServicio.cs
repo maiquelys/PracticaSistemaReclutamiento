@@ -38,8 +38,7 @@ namespace Reclutamiento.Negocio
             _dao.Actualizar(c);
         }
 
-        // metodo como funcion - con lambda para filtrar candidatos por tipo
-        // demuestra el uso de delegados y expresiones lambda
+        // metodo como funcion - con lambda para filtrar candidatos por tipo y tiene el uso de delegados y expresiones lambda
         public List<Candidato> FiltrarPorTipo(bool esInterno)
         {
             List<Candidato> todos = _dao.ObtenerTodos();

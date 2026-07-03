@@ -4,7 +4,7 @@ namespace Reclutamiento.Datos
 {
     public class CandidatoDAO
     {
-        // metodo obtener todos
+        // metodo pa obtener todos
         public List<Candidato> ObtenerTodos()
         {
             List<Candidato> lista = new List<Candidato>();
