@@ -43,6 +43,8 @@
             btnLimpiar = new Button();
             dgvCandidatos = new DataGridView();
             btnVolver = new Button();
+            btnSubirCV = new Button();
+            btnVerCV = new Button();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidatos).BeginInit();
             SuspendLayout();
@@ -155,7 +157,7 @@
             btnGuardar.Anchor = AnchorStyles.None;
             btnGuardar.BackColor = Color.FromArgb(192, 255, 192);
             btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(172, 187);
+            btnGuardar.Location = new Point(25, 187);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
@@ -168,7 +170,7 @@
             btnEliminar.Anchor = AnchorStyles.None;
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(324, 187);
+            btnEliminar.Location = new Point(131, 187);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
@@ -180,7 +182,7 @@
             // 
             btnLimpiar.Anchor = AnchorStyles.None;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpiar.Location = new Point(473, 187);
+            btnLimpiar.Location = new Point(237, 187);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
@@ -209,12 +211,40 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
+            // btnSubirCV
+            // 
+            btnSubirCV.BackColor = Color.Black;
+            btnSubirCV.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubirCV.ForeColor = Color.RoyalBlue;
+            btnSubirCV.Location = new Point(558, 187);
+            btnSubirCV.Name = "btnSubirCV";
+            btnSubirCV.Size = new Size(100, 35);
+            btnSubirCV.TabIndex = 6;
+            btnSubirCV.Text = "Subir CV";
+            btnSubirCV.UseVisualStyleBackColor = false;
+            btnSubirCV.Click += btnSubirCV_Click;
+            // 
+            // btnVerCV
+            // 
+            btnVerCV.BackColor = Color.RoyalBlue;
+            btnVerCV.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerCV.ForeColor = Color.Black;
+            btnVerCV.Location = new Point(664, 187);
+            btnVerCV.Name = "btnVerCV";
+            btnVerCV.Size = new Size(100, 35);
+            btnVerCV.TabIndex = 7;
+            btnVerCV.Text = "Ver CV";
+            btnVerCV.UseVisualStyleBackColor = false;
+            btnVerCV.Click += btnVerCV_Click;
+            // 
             // frmCandidatos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(782, 453);
+            Controls.Add(btnVerCV);
+            Controls.Add(btnSubirCV);
             Controls.Add(btnVolver);
             Controls.Add(dgvCandidatos);
             Controls.Add(btnLimpiar);
@@ -248,5 +278,7 @@
         private Button btnLimpiar;
         private DataGridView dgvCandidatos;
         private Button btnVolver;
+        private Button btnSubirCV;
+        private Button btnVerCV;
     }
 }

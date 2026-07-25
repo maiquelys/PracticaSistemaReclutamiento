@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Reclutamiento.Negocio;
@@ -52,8 +53,19 @@ namespace Reclutamiento.Presentacion
 
             if (confirm == DialogResult.Yes)
             {
-                _servicio.EliminarCandidato(id);
-                CargarCandidatos();
+                try
+                {
+                    _servicio.EliminarCandidato(id);
+                    CargarCandidatos();
+                }
+                catch (Microsoft.Data.SqlClient.SqlException ex) when (ex.Number == 547)
+                {
+                    MessageBox.Show("No se puede eliminar este candidato porque tiene entrevistas registradas asociadas. Elimina primero esas entrevistas.", "No se puede eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -108,6 +120,72 @@ namespace Reclutamiento.Presentacion
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnSubirCV_Click(object sender, EventArgs e)
+        {
+            if (dgvCandidatos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un candidato para subirle el CV.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = (int)dgvCandidatos.SelectedRows[0].Cells["CandidatoID"].Value;
+
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Archivos PDF (*.pdf)|*.pdf";
+                ofd.Title = "Selecciona el CV en PDF";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        byte[] cvBytes = File.ReadAllBytes(ofd.FileName);
+                        await _servicio.SubirCVAsync(id, cvBytes);
+                        MessageBox.Show("CV subido exitosamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al subir el CV: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private async void btnVerCV_Click(object sender, EventArgs e)
+        {
+            if (dgvCandidatos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un candidato para ver su CV.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = (int)dgvCandidatos.SelectedRows[0].Cells["CandidatoID"].Value;
+
+            try
+            {
+                byte[] cvBytes = await _servicio.ObtenerCVAsync(id);
+
+                if (cvBytes == null)
+                {
+                    MessageBox.Show("Este candidato no tiene un CV guardado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string rutaTemp = Path.Combine(Path.GetTempPath(), $"CV_{id}.pdf");
+                File.WriteAllBytes(rutaTemp, cvBytes);
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = rutaTemp,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el CV: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

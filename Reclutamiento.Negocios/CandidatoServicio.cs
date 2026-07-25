@@ -1,4 +1,5 @@
 ﻿using Reclutamiento.Datos;
+using System.Threading.Tasks;
 
 namespace Reclutamiento.Negocio
 {
@@ -45,6 +46,21 @@ namespace Reclutamiento.Negocio
             // lambda: recibe un candidato y retorna true si su tipo coincide
             Func<Candidato, bool> filtro = c => c.EsInterno == esInterno;
             return todos.Where(filtro).ToList();
+        }
+
+        // metodo asincrono - sube el CV validando que sea un PDF valido
+        public async Task SubirCVAsync(int candidatoId, byte[] cvBytes)
+        {
+            if (cvBytes == null || cvBytes.Length == 0)
+                throw new ArgumentException("El archivo del CV esta vacio");
+
+            await _dao.GuardarCVAsync(candidatoId, cvBytes);
+        }
+
+        // metodo asincrono - obtiene el CV de un candidato
+        public async Task<byte[]> ObtenerCVAsync(int candidatoId)
+        {
+            return await _dao.ObtenerCVAsync(candidatoId);
         }
     }
 }

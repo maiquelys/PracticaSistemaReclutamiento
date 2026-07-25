@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Reclutamiento.Datos
 {
@@ -77,5 +78,37 @@ namespace Reclutamiento.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // metodo asincrono para guardar el CV en la base de datos
+        public async Task GuardarCVAsync(int candidatoId, byte[] cvBytes)
+        {
+            using (SqlConnection con = Conexion.ObtenerConexion())
+            {
+                await con.OpenAsync();
+                string query = "UPDATE Candidatos SET CvPdf = @CvPdf WHERE CandidatoID = @ID";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@CvPdf", (object)cvBytes ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@ID", candidatoId);
+                await cmd.ExecuteNonQueryAsync();
+            }
+        }
+
+        // metodo asincrono para obtener el CV guardado de un candidato
+        public async Task<byte[]> ObtenerCVAsync(int candidatoId)
+        {
+            using (SqlConnection con = Conexion.ObtenerConexion())
+            {
+                await con.OpenAsync();
+                string query = "SELECT CvPdf FROM Candidatos WHERE CandidatoID = @ID";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@ID", candidatoId);
+                object resultado = await cmd.ExecuteScalarAsync();
+
+                if (resultado == null || resultado == DBNull.Value)
+                    return null;
+
+                return (byte[])resultado;
+            }
+        }
     }
-} 
+}

@@ -55,6 +55,7 @@
         public string Email { get; set; }
         public string Telefono { get; set; }
         public bool EsInterno { get; set; }
+        public byte[] CvPdf { get; set; }
 
         //constructor parametrizado
         public Candidato(string cedula, string nombre, string email, string telefono, bool esInterno)
