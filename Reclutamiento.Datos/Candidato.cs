@@ -49,7 +49,7 @@
     }
 
     //herencia candidato:persona
-    public class Candidato : Persona
+    public class Candidato : Persona, IArchivoAdjunto
     {
         public int CandidatoID { get; set; }
         public string Email { get; set; }
@@ -78,6 +78,18 @@
             Console.WriteLine($"Candidato {Nombre} eliminadodo de memoria");
         }
 
+        private string _rutaCV;
+
+        // implementacion de la interfaz IArchivoAdjunto
+        public void AdjuntarCV(string rutaArchivo)
+        {
+            _rutaCV = rutaArchivo;
+        }
+
+        public string ObtenerRutaCV()
+        {
+            return _rutaCV;
+        }
         //override y polimorfismo
         public override double CalcularPuntuacion()
         {
