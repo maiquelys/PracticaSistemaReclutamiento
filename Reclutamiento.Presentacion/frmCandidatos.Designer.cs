@@ -45,8 +45,15 @@
             btnVolver = new Button();
             btnSubirCV = new Button();
             btnVerCV = new Button();
+            menuStrip1 = new MenuStrip();
+            candidatosToolStripMenuItem = new ToolStripMenuItem();
+            vacantesToolStripMenuItem = new ToolStripMenuItem();
+            entrevistasToolStripMenuItem = new ToolStripMenuItem();
+            decisiónFinalToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidatos).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // grpDatos
@@ -62,9 +69,9 @@
             grpDatos.Controls.Add(txtCedula);
             grpDatos.Controls.Add(label1);
             grpDatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpDatos.Location = new Point(12, 23);
+            grpDatos.Location = new Point(12, 27);
             grpDatos.Name = "grpDatos";
-            grpDatos.Size = new Size(758, 158);
+            grpDatos.Size = new Size(758, 149);
             grpDatos.TabIndex = 0;
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos del Candidato";
@@ -72,7 +79,7 @@
             // chkEsInterno
             // 
             chkEsInterno.AutoSize = true;
-            chkEsInterno.Location = new Point(338, 134);
+            chkEsInterno.Location = new Point(337, 124);
             chkEsInterno.Name = "chkEsInterno";
             chkEsInterno.Size = new Size(102, 24);
             chkEsInterno.TabIndex = 8;
@@ -157,7 +164,7 @@
             btnGuardar.Anchor = AnchorStyles.None;
             btnGuardar.BackColor = Color.FromArgb(192, 255, 192);
             btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(25, 187);
+            btnGuardar.Location = new Point(25, 182);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
@@ -170,7 +177,7 @@
             btnEliminar.Anchor = AnchorStyles.None;
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(131, 187);
+            btnEliminar.Location = new Point(131, 182);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
@@ -182,7 +189,7 @@
             // 
             btnLimpiar.Anchor = AnchorStyles.None;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpiar.Location = new Point(237, 187);
+            btnLimpiar.Location = new Point(237, 182);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
@@ -194,7 +201,7 @@
             // 
             dgvCandidatos.Anchor = AnchorStyles.None;
             dgvCandidatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCandidatos.Location = new Point(25, 228);
+            dgvCandidatos.Location = new Point(25, 223);
             dgvCandidatos.Name = "dgvCandidatos";
             dgvCandidatos.RowHeadersWidth = 51;
             dgvCandidatos.Size = new Size(733, 174);
@@ -203,7 +210,7 @@
             // btnVolver
             // 
             btnVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnVolver.Location = new Point(664, 412);
+            btnVolver.Location = new Point(664, 401);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(94, 29);
             btnVolver.TabIndex = 5;
@@ -237,12 +244,58 @@
             btnVerCV.UseVisualStyleBackColor = false;
             btnVerCV.Click += btnVerCV_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisiónFinalToolStripMenuItem, reportesToolStripMenuItem });
+            menuStrip1.Location = new Point(146, -4);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(477, 28);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            // 
+            // candidatosToolStripMenuItem
+            // 
+            candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
+            candidatosToolStripMenuItem.Size = new Size(98, 24);
+            candidatosToolStripMenuItem.Text = "Candidatos";
+            // 
+            // vacantesToolStripMenuItem
+            // 
+            vacantesToolStripMenuItem.Name = "vacantesToolStripMenuItem";
+            vacantesToolStripMenuItem.Size = new Size(81, 24);
+            vacantesToolStripMenuItem.Text = "Vacantes";
+            vacantesToolStripMenuItem.Click += vacantesToolStripMenuItem_Click;
+            // 
+            // entrevistasToolStripMenuItem
+            // 
+            entrevistasToolStripMenuItem.Name = "entrevistasToolStripMenuItem";
+            entrevistasToolStripMenuItem.Size = new Size(93, 24);
+            entrevistasToolStripMenuItem.Text = "Entrevistas";
+            entrevistasToolStripMenuItem.Click += entrevistasToolStripMenuItem_Click;
+            // 
+            // decisiónFinalToolStripMenuItem
+            // 
+            decisiónFinalToolStripMenuItem.Name = "decisiónFinalToolStripMenuItem";
+            decisiónFinalToolStripMenuItem.Size = new Size(115, 24);
+            decisiónFinalToolStripMenuItem.Text = "Decisión Final";
+            decisiónFinalToolStripMenuItem.Click += decisionFinalToolStripMenuItem_Click;
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(82, 24);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
+            // 
             // frmCandidatos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(782, 453);
+            ClientSize = new Size(782, 442);
             Controls.Add(btnVerCV);
             Controls.Add(btnSubirCV);
             Controls.Add(btnVolver);
@@ -251,6 +304,8 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(grpDatos);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "frmCandidatos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de Candidatos";
@@ -258,7 +313,10 @@
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCandidatos).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -280,5 +338,11 @@
         private Button btnVolver;
         private Button btnSubirCV;
         private Button btnVerCV;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem candidatosToolStripMenuItem;
+        private ToolStripMenuItem vacantesToolStripMenuItem;
+        private ToolStripMenuItem entrevistasToolStripMenuItem;
+        private ToolStripMenuItem decisiónFinalToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

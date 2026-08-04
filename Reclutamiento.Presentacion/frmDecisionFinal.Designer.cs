@@ -27,8 +27,15 @@
             btnLimpiar = new Button();
             dgvDecisiones = new DataGridView();
             btnVolver = new Button();
+            menuStrip1 = new MenuStrip();
+            candidatosToolStripMenuItem = new ToolStripMenuItem();
+            vacantesToolStripMenuItem = new ToolStripMenuItem();
+            entrevistasToolStripMenuItem = new ToolStripMenuItem();
+            decisionFinalToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDecisiones).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // grpDatos
@@ -43,9 +50,9 @@
             grpDatos.Controls.Add(lblComentario);
             grpDatos.Controls.Add(txtComentario);
             grpDatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpDatos.Location = new Point(10, 10);
+            grpDatos.Location = new Point(0, 27);
             grpDatos.Name = "grpDatos";
-            grpDatos.Size = new Size(760, 180);
+            grpDatos.Size = new Size(760, 163);
             grpDatos.TabIndex = 0;
             grpDatos.TabStop = false;
             grpDatos.Text = "Decision Final";
@@ -179,6 +186,51 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisionFinalToolStripMenuItem, reportesToolStripMenuItem });
+            menuStrip1.Location = new Point(164, -4);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(627, 28);
+            menuStrip1.TabIndex = 6;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // candidatosToolStripMenuItem
+            // 
+            candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
+            candidatosToolStripMenuItem.Size = new Size(98, 24);
+            candidatosToolStripMenuItem.Text = "Candidatos";
+            candidatosToolStripMenuItem.Click += candidatosToolStripMenuItem_Click;
+            // 
+            // vacantesToolStripMenuItem
+            // 
+            vacantesToolStripMenuItem.Name = "vacantesToolStripMenuItem";
+            vacantesToolStripMenuItem.Size = new Size(81, 24);
+            vacantesToolStripMenuItem.Text = "Vacantes";
+            vacantesToolStripMenuItem.Click += vacantesToolStripMenuItem_Click;
+            // 
+            // entrevistasToolStripMenuItem
+            // 
+            entrevistasToolStripMenuItem.Name = "entrevistasToolStripMenuItem";
+            entrevistasToolStripMenuItem.Size = new Size(93, 24);
+            entrevistasToolStripMenuItem.Text = "Entrevistas";
+            entrevistasToolStripMenuItem.Click += entrevistasToolStripMenuItem_Click;
+            // 
+            // decisionFinalToolStripMenuItem
+            // 
+            decisionFinalToolStripMenuItem.Name = "decisionFinalToolStripMenuItem";
+            decisionFinalToolStripMenuItem.Size = new Size(115, 24);
+            decisionFinalToolStripMenuItem.Text = "Decisión Final";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(82, 24);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
+            // 
             // frmDecisionFinal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -191,6 +243,8 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnLimpiar);
             Controls.Add(dgvDecisiones);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "frmDecisionFinal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Decision Final";
@@ -198,7 +252,10 @@
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDecisiones).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private GroupBox grpDatos;
@@ -215,5 +272,11 @@
         private Button btnLimpiar;
         private DataGridView dgvDecisiones;
         private Button btnVolver;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem candidatosToolStripMenuItem;
+        private ToolStripMenuItem vacantesToolStripMenuItem;
+        private ToolStripMenuItem entrevistasToolStripMenuItem;
+        private ToolStripMenuItem decisionFinalToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
     }
 }
