@@ -22,6 +22,7 @@ namespace Reclutamiento.Presentacion
         {
             CargarVacantes();
             cboEstado.SelectedIndex = 0;
+            vacantesToolStripMenuItem.Font = new Font(vacantesToolStripMenuItem.Font, FontStyle.Bold);
         }
         private void CargarVacantes()
         {
@@ -93,6 +94,40 @@ namespace Reclutamiento.Presentacion
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCandidatos frm = new frmCandidatos();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void entrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEntrevistas frm = new frmEntrevistas();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void decisionFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDecisionFinal frm = new frmDecisionFinal();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReportes frm = new frmReportes();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

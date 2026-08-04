@@ -57,5 +57,39 @@ namespace Reclutamiento.Presentacion
         {
 
         }
+
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCandidatos frm = new frmCandidatos();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void vacantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmVacantes frm = new frmVacantes();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void entrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEntrevistas frm = new frmEntrevistas();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void decisionFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDecisionFinal frm = new frmDecisionFinal();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void frmReportes_Load(object sender, EventArgs e)
+        {
+            reportesToolStripMenuItem.Font = new Font(reportesToolStripMenuItem.Font, FontStyle.Bold);
+        }
     }
 }
