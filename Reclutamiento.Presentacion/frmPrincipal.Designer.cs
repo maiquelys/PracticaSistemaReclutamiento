@@ -35,6 +35,13 @@
             btnCerrarSesion = new Button();
             btnDecision = new Button();
             btnReportes = new Button();
+            menuStrip1 = new MenuStrip();
+            candidatosToolStripMenuItem = new ToolStripMenuItem();
+            vacantesToolStripMenuItem = new ToolStripMenuItem();
+            entrevistasToolStripMenuItem = new ToolStripMenuItem();
+            decisionFinalToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -128,6 +135,54 @@
             btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += button1_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Anchor = AnchorStyles.Top;
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisionFinalToolStripMenuItem, reportesToolStripMenuItem });
+            menuStrip1.Location = new Point(146, -4);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(627, 28);
+            menuStrip1.TabIndex = 7;
+            menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            // 
+            // candidatosToolStripMenuItem
+            // 
+            candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
+            candidatosToolStripMenuItem.Size = new Size(98, 24);
+            candidatosToolStripMenuItem.Text = "Candidatos";
+            candidatosToolStripMenuItem.Click += btnCandidatos_Click;
+            // 
+            // vacantesToolStripMenuItem
+            // 
+            vacantesToolStripMenuItem.Name = "vacantesToolStripMenuItem";
+            vacantesToolStripMenuItem.Size = new Size(81, 24);
+            vacantesToolStripMenuItem.Text = "Vacantes";
+            vacantesToolStripMenuItem.Click += btnVacantes_Click;
+            // 
+            // entrevistasToolStripMenuItem
+            // 
+            entrevistasToolStripMenuItem.Name = "entrevistasToolStripMenuItem";
+            entrevistasToolStripMenuItem.Size = new Size(93, 24);
+            entrevistasToolStripMenuItem.Text = "Entrevistas";
+            entrevistasToolStripMenuItem.Click += btnEntrevistas_Click;
+            // 
+            // decisionFinalToolStripMenuItem
+            // 
+            decisionFinalToolStripMenuItem.Name = "decisionFinalToolStripMenuItem";
+            decisionFinalToolStripMenuItem.Size = new Size(115, 24);
+            decisionFinalToolStripMenuItem.Text = "Decision Final";
+            decisionFinalToolStripMenuItem.Click += btnDecision_Click;
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(82, 24);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += button1_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -141,9 +196,13 @@
             Controls.Add(btnVacantes);
             Controls.Add(btnCandidatos);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Reclutamiento";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,5 +216,11 @@
         private Button btnCerrarSesion;
         private Button btnDecision;
         private Button btnReportes;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem candidatosToolStripMenuItem;
+        private ToolStripMenuItem vacantesToolStripMenuItem;
+        private ToolStripMenuItem entrevistasToolStripMenuItem;
+        private ToolStripMenuItem decisionFinalToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

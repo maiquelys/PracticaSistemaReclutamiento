@@ -61,5 +61,10 @@ namespace Reclutamiento.Presentacion
             frm.ShowDialog();
             this.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

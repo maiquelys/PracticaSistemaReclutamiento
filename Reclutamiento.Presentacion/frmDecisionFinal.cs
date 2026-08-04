@@ -20,6 +20,7 @@ namespace Reclutamiento.Presentacion
         {
             CargarCombos();
             CargarDecisiones();
+            decisionFinalToolStripMenuItem.Font = new Font(decisionFinalToolStripMenuItem.Font, FontStyle.Bold);
         }
 
         private void CargarCombos()
@@ -128,6 +129,35 @@ namespace Reclutamiento.Presentacion
         private void lblDecision_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCandidatos frm = new frmCandidatos();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void vacantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmVacantes frm = new frmVacantes();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void entrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEntrevistas frm = new frmEntrevistas();
+            frm.ShowDialog();
+            this.Show();
+        }
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReportes frm = new frmReportes();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }
