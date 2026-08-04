@@ -213,7 +213,7 @@
             // 
             // btnSubirCV
             // 
-            btnSubirCV.BackColor = Color.Black;
+            btnSubirCV.BackColor = Color.DarkGray;
             btnSubirCV.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSubirCV.ForeColor = Color.RoyalBlue;
             btnSubirCV.Location = new Point(558, 187);
@@ -226,7 +226,7 @@
             // 
             // btnVerCV
             // 
-            btnVerCV.BackColor = Color.RoyalBlue;
+            btnVerCV.BackColor = Color.CornflowerBlue;
             btnVerCV.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVerCV.ForeColor = Color.Black;
             btnVerCV.Location = new Point(664, 187);
