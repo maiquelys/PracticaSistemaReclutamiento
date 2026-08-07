@@ -33,6 +33,7 @@
             entrevistasToolStripMenuItem = new ToolStripMenuItem();
             decisionFinalToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
+            btnImprimirDecision = new Button();
             grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDecisiones).BeginInit();
             menuStrip1.SuspendLayout();
@@ -133,7 +134,7 @@
             btnGuardar.BackColor = Color.FromArgb(192, 255, 192);
             btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.Black;
-            btnGuardar.Location = new Point(132, 196);
+            btnGuardar.Location = new Point(73, 196);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
@@ -146,7 +147,7 @@
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(339, 196);
+            btnEliminar.Location = new Point(179, 196);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
@@ -158,7 +159,7 @@
             // 
             btnLimpiar.BackColor = Color.White;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpiar.Location = new Point(535, 196);
+            btnLimpiar.Location = new Point(285, 196);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
@@ -193,7 +194,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisionFinalToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(164, -4);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(627, 28);
+            menuStrip1.Size = new Size(477, 28);
             menuStrip1.TabIndex = 6;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -231,12 +232,25 @@
             reportesToolStripMenuItem.Text = "Reportes";
             reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
             // 
+            // btnImprimirDecision
+            // 
+            btnImprimirDecision.BackColor = Color.LightGray;
+            btnImprimirDecision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImprimirDecision.Location = new Point(582, 196);
+            btnImprimirDecision.Name = "btnImprimirDecision";
+            btnImprimirDecision.Size = new Size(150, 35);
+            btnImprimirDecision.TabIndex = 7;
+            btnImprimirDecision.Text = "Imprimir Decision";
+            btnImprimirDecision.UseVisualStyleBackColor = false;
+            btnImprimirDecision.Click += btnImprimirDecision_Click;
+            // 
             // frmDecisionFinal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 500);
+            Controls.Add(btnImprimirDecision);
             Controls.Add(btnVolver);
             Controls.Add(grpDatos);
             Controls.Add(btnGuardar);
@@ -278,5 +292,6 @@
         private ToolStripMenuItem entrevistasToolStripMenuItem;
         private ToolStripMenuItem decisionFinalToolStripMenuItem;
         private ToolStripMenuItem reportesToolStripMenuItem;
+        private Button btnImprimirDecision;
     }
 }

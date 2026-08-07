@@ -159,7 +159,7 @@
             // 
             btnGuardar.BackColor = Color.FromArgb(192, 255, 192);
             btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(141, 200);
+            btnGuardar.Location = new Point(141, 213);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 35);
             btnGuardar.TabIndex = 1;
@@ -171,7 +171,7 @@
             // 
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(325, 200);
+            btnEliminar.Location = new Point(327, 213);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 35);
             btnEliminar.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             btnLimpiar.BackColor = Color.White;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpiar.Location = new Point(516, 200);
+            btnLimpiar.Location = new Point(512, 213);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 35);
             btnLimpiar.TabIndex = 3;
@@ -208,7 +208,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisiónFinalToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(146, -4);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(627, 28);
+            menuStrip1.Size = new Size(477, 28);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;

@@ -66,5 +66,53 @@ namespace Reclutamiento.Presentacion
         {
 
         }
+
+        // metodos del Menustrip (barra de arriba) agregada por Nayelis
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCandidatos frm = new frmCandidatos();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void vacantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmVacantes frm = new frmVacantes();
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void entrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEntrevistas frm = new frmEntrevistas();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void decisionFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDecisionFinal frm = new frmDecisionFinal();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportes frm = new frmReportes();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

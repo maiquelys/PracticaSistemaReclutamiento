@@ -27,6 +27,7 @@
             entrevistasToolStripMenuItem = new ToolStripMenuItem();
             decisiónFinalToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
+            btnExportarPDF = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvReporte).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -49,7 +50,7 @@
             btnCandidatosInternos.ForeColor = Color.White;
             btnCandidatosInternos.Location = new Point(10, 60);
             btnCandidatosInternos.Name = "btnCandidatosInternos";
-            btnCandidatosInternos.Size = new Size(180, 50);
+            btnCandidatosInternos.Size = new Size(138, 50);
             btnCandidatosInternos.TabIndex = 1;
             btnCandidatosInternos.Text = "Candidatos Internos";
             btnCandidatosInternos.UseVisualStyleBackColor = false;
@@ -59,9 +60,9 @@
             // 
             btnCandidatosExternos.BackColor = Color.DarkGreen;
             btnCandidatosExternos.ForeColor = Color.White;
-            btnCandidatosExternos.Location = new Point(200, 60);
+            btnCandidatosExternos.Location = new Point(154, 60);
             btnCandidatosExternos.Name = "btnCandidatosExternos";
-            btnCandidatosExternos.Size = new Size(180, 50);
+            btnCandidatosExternos.Size = new Size(149, 50);
             btnCandidatosExternos.TabIndex = 2;
             btnCandidatosExternos.Text = "Candidatos Externos";
             btnCandidatosExternos.UseVisualStyleBackColor = false;
@@ -71,9 +72,9 @@
             // 
             btnVacantesActivas.BackColor = Color.DarkRed;
             btnVacantesActivas.ForeColor = Color.White;
-            btnVacantesActivas.Location = new Point(390, 60);
+            btnVacantesActivas.Location = new Point(309, 60);
             btnVacantesActivas.Name = "btnVacantesActivas";
-            btnVacantesActivas.Size = new Size(180, 50);
+            btnVacantesActivas.Size = new Size(145, 50);
             btnVacantesActivas.TabIndex = 3;
             btnVacantesActivas.Text = "Vacantes Activas";
             btnVacantesActivas.UseVisualStyleBackColor = false;
@@ -83,9 +84,9 @@
             // 
             btnEntrevistasAltas.BackColor = Color.DarkOrange;
             btnEntrevistasAltas.ForeColor = Color.White;
-            btnEntrevistasAltas.Location = new Point(580, 60);
+            btnEntrevistasAltas.Location = new Point(460, 62);
             btnEntrevistasAltas.Name = "btnEntrevistasAltas";
-            btnEntrevistasAltas.Size = new Size(180, 50);
+            btnEntrevistasAltas.Size = new Size(138, 50);
             btnEntrevistasAltas.TabIndex = 4;
             btnEntrevistasAltas.Text = "Entrevistas Puntuacion Alta";
             btnEntrevistasAltas.UseVisualStyleBackColor = false;
@@ -165,12 +166,25 @@
             reportesToolStripMenuItem.Size = new Size(82, 24);
             reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // btnExportarPDF
+            // 
+            btnExportarPDF.BackColor = Color.Tomato;
+            btnExportarPDF.ForeColor = Color.White;
+            btnExportarPDF.Location = new Point(622, 62);
+            btnExportarPDF.Name = "btnExportarPDF";
+            btnExportarPDF.Size = new Size(138, 50);
+            btnExportarPDF.TabIndex = 9;
+            btnExportarPDF.Text = "Exportar a PDF";
+            btnExportarPDF.UseVisualStyleBackColor = false;
+            btnExportarPDF.Click += btnExportarPDF_Click;
+            // 
             // frmReportes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 500);
+            Controls.Add(btnExportarPDF);
             Controls.Add(lblTitulo);
             Controls.Add(btnCandidatosInternos);
             Controls.Add(btnCandidatosExternos);
@@ -206,5 +220,6 @@
         private ToolStripMenuItem entrevistasToolStripMenuItem;
         private ToolStripMenuItem decisiónFinalToolStripMenuItem;
         private ToolStripMenuItem reportesToolStripMenuItem;
+        private Button btnExportarPDF;
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Reclutamiento.Negocio;
 using Reclutamiento.Datos;
@@ -10,6 +12,7 @@ namespace Reclutamiento.Presentacion
         private DecisionFinalServicio _servicio = new DecisionFinalServicio();
         private CandidatoServicio _candidatoServicio = new CandidatoServicio();
         private VacanteServicio _vacanteServicio = new VacanteServicio();
+        private ReporteServicio _reporteServicio = new ReporteServicio();
 
         public frmDecisionFinal()
         {
@@ -20,7 +23,6 @@ namespace Reclutamiento.Presentacion
         {
             CargarCombos();
             CargarDecisiones();
-            decisionFinalToolStripMenuItem.Font = new Font(decisionFinalToolStripMenuItem.Font, FontStyle.Bold);
         }
 
         private void CargarCombos()
@@ -131,31 +133,85 @@ namespace Reclutamiento.Presentacion
 
         }
 
+        // Genera el PDF de la decision final seleccionada, con el CV embebido si existe
+        private async void btnImprimirDecision_Click(object sender, EventArgs e)
+        {
+            if (dgvDecisiones.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una decision para imprimir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int decisionId = (int)dgvDecisiones.SelectedRows[0].Cells["DecisionID"].Value;
+                int candidatoId = (int)dgvDecisiones.SelectedRows[0].Cells["CandidatoID"].Value;
+                int vacanteId = (int)dgvDecisiones.SelectedRows[0].Cells["VacanteID"].Value;
+
+                DecisionFinal decision = _servicio.ObtenerDecisiones()
+                    .FirstOrDefault(d => d.DecisionID == decisionId);
+                Candidato candidato = _candidatoServicio.ObtenerCandidatos()
+                    .FirstOrDefault(c => c.CandidatoID == candidatoId);
+                Vacante vacante = _vacanteServicio.ObtenerVacantes()
+                    .FirstOrDefault(v => v.VacanteID == vacanteId);
+
+                if (decision == null || candidato == null || vacante == null)
+                {
+                    MessageBox.Show("No se pudo encontrar toda la informacion necesaria.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                byte[] cvBytes = await _candidatoServicio.ObtenerCVAsync(candidatoId);
+
+                byte[] pdfFinal = _reporteServicio.GenerarReporteDecisionFinal(decision, candidato, vacante, cvBytes);
+
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                    sfd.FileName = $"DecisionFinal_{candidato.Nombre}.pdf";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllBytes(sfd.FileName, pdfFinal);
+                        MessageBox.Show("PDF generado exitosamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // metodos del Menustrip (barra de arriba) agregada por Nayelis
         private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmCandidatos frm = new frmCandidatos();
+            this.Hide();
             frm.ShowDialog();
             this.Show();
         }
+
         private void vacantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmVacantes frm = new frmVacantes();
+            this.Hide();
             frm.ShowDialog();
             this.Show();
         }
+
         private void entrevistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmEntrevistas frm = new frmEntrevistas();
+            this.Hide();
             frm.ShowDialog();
             this.Show();
         }
+
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmReportes frm = new frmReportes();
+            this.Hide();
             frm.ShowDialog();
             this.Show();
         }
