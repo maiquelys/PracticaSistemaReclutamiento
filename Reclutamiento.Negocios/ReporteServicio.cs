@@ -16,7 +16,7 @@ namespace Reclutamiento.Negocio
             QuestPDF.Settings.License = LicenseType.Community;
         }
 
-        // Genera un reporte en PDF a partir de encabezados y filas genericas (para frmReportes)
+        // genera un reporte en PDF a partir de encabezados y filas genericas (para frmReportes)
         public byte[] GenerarReporteGeneral(string titulo, string[] encabezados, List<string[]> filas)
         {
             using (var stream = new MemoryStream())
@@ -69,7 +69,7 @@ namespace Reclutamiento.Negocio
             }
         }
 
-        // Genera el reporte de Decision Final (datos + comentarios) y le fusiona el CV en PDF si existe
+        // genera el reporte de Decision Final (datos + comentarios) y le fusiona el CV en PDF si existe
         public byte[] GenerarReporteDecisionFinal(DecisionFinal decision, Candidato candidato, Vacante vacante, byte[] cvPdfBytes)
         {
             byte[] reporteBytes;
