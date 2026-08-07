@@ -20,6 +20,7 @@ namespace Reclutamiento.Presentacion
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            reportesToolStripMenuItem.Font = new Font(reportesToolStripMenuItem.Font, FontStyle.Bold);
 
         }
 

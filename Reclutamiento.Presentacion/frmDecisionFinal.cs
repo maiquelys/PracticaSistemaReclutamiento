@@ -23,6 +23,7 @@ namespace Reclutamiento.Presentacion
         {
             CargarCombos();
             CargarDecisiones();
+            decisionFinalToolStripMenuItem.Font = new Font(decisionFinalToolStripMenuItem.Font, FontStyle.Bold);
         }
 
         private void CargarCombos()
