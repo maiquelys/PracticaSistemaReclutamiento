@@ -48,7 +48,7 @@
             // 
             btnCandidatosInternos.BackColor = Color.DarkBlue;
             btnCandidatosInternos.ForeColor = Color.White;
-            btnCandidatosInternos.Location = new Point(10, 60);
+            btnCandidatosInternos.Location = new Point(45, 67);
             btnCandidatosInternos.Name = "btnCandidatosInternos";
             btnCandidatosInternos.Size = new Size(138, 50);
             btnCandidatosInternos.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             btnCandidatosExternos.BackColor = Color.DarkGreen;
             btnCandidatosExternos.ForeColor = Color.White;
-            btnCandidatosExternos.Location = new Point(154, 60);
+            btnCandidatosExternos.Location = new Point(231, 67);
             btnCandidatosExternos.Name = "btnCandidatosExternos";
             btnCandidatosExternos.Size = new Size(149, 50);
             btnCandidatosExternos.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             btnVacantesActivas.BackColor = Color.DarkRed;
             btnVacantesActivas.ForeColor = Color.White;
-            btnVacantesActivas.Location = new Point(309, 60);
+            btnVacantesActivas.Location = new Point(427, 67);
             btnVacantesActivas.Name = "btnVacantesActivas";
             btnVacantesActivas.Size = new Size(145, 50);
             btnVacantesActivas.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             btnEntrevistasAltas.BackColor = Color.DarkOrange;
             btnEntrevistasAltas.ForeColor = Color.White;
-            btnEntrevistasAltas.Location = new Point(460, 62);
+            btnEntrevistasAltas.Location = new Point(609, 67);
             btnEntrevistasAltas.Name = "btnEntrevistasAltas";
             btnEntrevistasAltas.Size = new Size(138, 50);
             btnEntrevistasAltas.TabIndex = 4;
@@ -170,7 +170,7 @@
             // 
             btnExportarPDF.BackColor = Color.Tomato;
             btnExportarPDF.ForeColor = Color.White;
-            btnExportarPDF.Location = new Point(622, 62);
+            btnExportarPDF.Location = new Point(332, 436);
             btnExportarPDF.Name = "btnExportarPDF";
             btnExportarPDF.Size = new Size(138, 50);
             btnExportarPDF.TabIndex = 9;

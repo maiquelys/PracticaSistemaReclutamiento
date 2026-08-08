@@ -16,7 +16,7 @@ namespace Reclutamiento.Negocio
             QuestPDF.Settings.License = LicenseType.Community;
         }
 
-        // genera un reporte en PDF a partir de encabezados y filas genericas (para frmReportes)
+        // Genera un reporte en PDF a partir de encabezados y filas genericas (para frmReportes)
         public byte[] GenerarReporteGeneral(string titulo, string[] encabezados, List<string[]> filas)
         {
             using (var stream = new MemoryStream())
@@ -36,7 +36,6 @@ namespace Reclutamiento.Negocio
                                     columns.RelativeColumn();
                             });
 
-                            // encabezados
                             table.Header(header =>
                             {
                                 foreach (var titulo_col in encabezados)
@@ -46,7 +45,6 @@ namespace Reclutamiento.Negocio
                                 }
                             });
 
-                            // filas
                             foreach (var fila in filas)
                             {
                                 foreach (var valor in fila)
@@ -69,8 +67,9 @@ namespace Reclutamiento.Negocio
             }
         }
 
-        // genera el reporte de Decision Final (datos + comentarios) y le fusiona el CV en PDF si existe
-        public byte[] GenerarReporteDecisionFinal(DecisionFinal decision, Candidato candidato, Vacante vacante, byte[] cvPdfBytes)
+        // Genera el reporte de Decision Final (datos + comentarios) y le fusiona el CV en PDF si existe
+        // logoBytes se recibe ya listo desde la capa de Presentacion (Negocio no debe depender de Presentacion)
+        public byte[] GenerarReporteDecisionFinal(DecisionFinal decision, Candidato candidato, Vacante vacante, byte[] cvPdfBytes, byte[] logoBytes)
         {
             byte[] reporteBytes;
 
@@ -81,36 +80,46 @@ namespace Reclutamiento.Negocio
                     container.Page(page =>
                     {
                         page.Margin(40);
+                        page.DefaultTextStyle(x => x.FontSize(11));
+
                         page.Header().Column(col =>
                         {
-                            col.Item().Text("Reporte de Decision Final").FontSize(20).Bold().FontColor(Colors.Blue.Darken3);
-                            col.Item().Text($"Generado el {DateTime.Now:dd/MM/yyyy HH:mm}").FontSize(9).FontColor(Colors.Grey.Darken1);
+                            if (logoBytes != null)
+                            {
+                                col.Item().AlignCenter().Height(80).Image(logoBytes).FitHeight();
+                                col.Item().PaddingTop(8);
+                            }
+
+                            col.Item().AlignCenter().Text("Reporte de Decision Final")
+                                .FontSize(20).Bold().FontColor(Colors.Blue.Darken3);
+                            col.Item().AlignCenter().Text($"Generado el {DateTime.Now:dd/MM/yyyy HH:mm}")
+                                .FontSize(9).FontColor(Colors.Grey.Darken1);
                         });
 
-                        page.Content().PaddingTop(20).Column(col =>
+                        page.Content().PaddingTop(25).Column(col =>
                         {
                             col.Spacing(8);
 
-                            col.Item().Text("Datos del Candidato").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
-                            col.Item().Text($"Nombre: {candidato.Nombre}");
-                            col.Item().Text($"Cedula: {candidato.Cedula}");
-                            col.Item().Text($"Email: {candidato.Email}");
-                            col.Item().Text($"Telefono: {candidato.Telefono}");
-                            col.Item().Text($"Tipo: {(candidato.EsInterno ? "Interno" : "Externo")}");
+                            col.Item().AlignCenter().Text("Datos del Candidato").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
+                            col.Item().AlignCenter().Text($"Nombre: {candidato.Nombre}");
+                            col.Item().AlignCenter().Text($"Cedula: {candidato.Cedula}");
+                            col.Item().AlignCenter().Text($"Email: {candidato.Email}");
+                            col.Item().AlignCenter().Text($"Telefono: {candidato.Telefono}");
+                            col.Item().AlignCenter().Text($"Tipo: {(candidato.EsInterno ? "Interno" : "Externo")}");
 
-                            col.Item().PaddingTop(10).Text("Vacante").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
-                            col.Item().Text($"Titulo: {vacante.Titulo}");
+                            col.Item().PaddingTop(10).AlignCenter().Text("Vacante").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
+                            col.Item().AlignCenter().Text($"Titulo: {vacante.Titulo}");
 
-                            col.Item().PaddingTop(10).Text("Decision Final").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
-                            col.Item().Text($"Resultado: {decision.Decision}").FontSize(12).Bold();
-                            col.Item().Text($"Fecha: {decision.Fecha:dd/MM/yyyy}");
-                            col.Item().PaddingTop(5).Text("Comentarios:").Bold();
-                            col.Item().Text(string.IsNullOrEmpty(decision.Comentario) ? "(Sin comentarios)" : decision.Comentario);
+                            col.Item().PaddingTop(10).AlignCenter().Text("Decision Final").FontSize(13).Bold().FontColor(Colors.Blue.Darken2);
+                            col.Item().AlignCenter().Text($"Resultado: {decision.Decision}").FontSize(12).Bold();
+                            col.Item().AlignCenter().Text($"Fecha: {decision.Fecha:dd/MM/yyyy}");
+                            col.Item().PaddingTop(5).AlignCenter().Text("Comentarios:").Bold();
+                            col.Item().AlignCenter().Text(string.IsNullOrEmpty(decision.Comentario) ? "(Sin comentarios)" : decision.Comentario);
 
                             if (cvPdfBytes != null)
-                                col.Item().PaddingTop(15).Text("El CV del candidato esta adjunto a continuacion.").Italic().FontColor(Colors.Grey.Darken1);
+                                col.Item().PaddingTop(15).AlignCenter().Text("El CV del candidato esta adjunto a continuacion.").Italic().FontColor(Colors.Grey.Darken1);
                             else
-                                col.Item().PaddingTop(15).Text("Este candidato no tiene CV guardado en el sistema.").Italic().FontColor(Colors.Grey.Darken1);
+                                col.Item().PaddingTop(15).AlignCenter().Text("Este candidato no tiene CV guardado en el sistema.").Italic().FontColor(Colors.Grey.Darken1);
                         });
                     });
                 }).GeneratePdf(stream);
@@ -118,11 +127,9 @@ namespace Reclutamiento.Negocio
                 reporteBytes = stream.ToArray();
             }
 
-            // si no hay CV, devolvemos solo el reporte
             if (cvPdfBytes == null || cvPdfBytes.Length == 0)
                 return reporteBytes;
 
-            // fusionamos el reporte con el CV en un solo PDF usando PdfSharpCore
             using (var outputStream = new MemoryStream())
             {
                 PdfDocument documentoFinal = new PdfDocument();

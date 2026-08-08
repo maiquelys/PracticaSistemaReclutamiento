@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             label1 = new Label();
             btnCandidatos = new Button();
             btnVacantes = new Button();
@@ -41,19 +42,21 @@
             entrevistasToolStripMenuItem = new ToolStripMenuItem();
             decisionFinalToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
+            pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(178, 58);
+            label1.Font = new Font("Modern No. 20", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(167, 33);
             label1.Name = "label1";
-            label1.Size = new Size(427, 31);
+            label1.Size = new Size(438, 90);
             label1.TabIndex = 0;
-            label1.Text = "Sistema de Gestion de Reclutamiento";
+            label1.Text = "Sistema de Gestion de \r\nReclutamiento";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnCandidatos
@@ -61,9 +64,9 @@
             btnCandidatos.Anchor = AnchorStyles.None;
             btnCandidatos.BackColor = Color.CornflowerBlue;
             btnCandidatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCandidatos.Location = new Point(136, 126);
+            btnCandidatos.Location = new Point(340, 155);
             btnCandidatos.Name = "btnCandidatos";
-            btnCandidatos.Size = new Size(154, 133);
+            btnCandidatos.Size = new Size(125, 105);
             btnCandidatos.TabIndex = 1;
             btnCandidatos.Text = "Candidatos";
             btnCandidatos.UseVisualStyleBackColor = false;
@@ -74,9 +77,9 @@
             btnVacantes.Anchor = AnchorStyles.None;
             btnVacantes.BackColor = Color.CornflowerBlue;
             btnVacantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVacantes.Location = new Point(311, 126);
+            btnVacantes.Location = new Point(471, 155);
             btnVacantes.Name = "btnVacantes";
-            btnVacantes.Size = new Size(154, 133);
+            btnVacantes.Size = new Size(125, 105);
             btnVacantes.TabIndex = 2;
             btnVacantes.Text = "Vacantes";
             btnVacantes.UseVisualStyleBackColor = false;
@@ -87,9 +90,9 @@
             btnEntrevista.Anchor = AnchorStyles.None;
             btnEntrevista.BackColor = Color.CornflowerBlue;
             btnEntrevista.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntrevista.Location = new Point(485, 126);
+            btnEntrevista.Location = new Point(602, 155);
             btnEntrevista.Name = "btnEntrevista";
-            btnEntrevista.Size = new Size(154, 133);
+            btnEntrevista.Size = new Size(125, 105);
             btnEntrevista.TabIndex = 3;
             btnEntrevista.Text = "Entrevistas";
             btnEntrevista.UseVisualStyleBackColor = false;
@@ -101,7 +104,7 @@
             btnCerrarSesion.BackColor = Color.MidnightBlue;
             btnCerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrarSesion.ForeColor = SystemColors.ButtonHighlight;
-            btnCerrarSesion.Location = new Point(295, 401);
+            btnCerrarSesion.Location = new Point(455, 401);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(150, 40);
             btnCerrarSesion.TabIndex = 4;
@@ -114,9 +117,9 @@
             btnDecision.Anchor = AnchorStyles.None;
             btnDecision.BackColor = Color.CornflowerBlue;
             btnDecision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDecision.Location = new Point(211, 262);
+            btnDecision.Location = new Point(392, 266);
             btnDecision.Name = "btnDecision";
-            btnDecision.Size = new Size(154, 133);
+            btnDecision.Size = new Size(125, 105);
             btnDecision.TabIndex = 5;
             btnDecision.Text = "Decision Final";
             btnDecision.UseVisualStyleBackColor = false;
@@ -127,9 +130,9 @@
             btnReportes.Anchor = AnchorStyles.None;
             btnReportes.BackColor = Color.CornflowerBlue;
             btnReportes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReportes.Location = new Point(394, 262);
+            btnReportes.Location = new Point(523, 266);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(154, 133);
+            btnReportes.Size = new Size(125, 105);
             btnReportes.TabIndex = 6;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = false;
@@ -143,7 +146,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { candidatosToolStripMenuItem, vacantesToolStripMenuItem, entrevistasToolStripMenuItem, decisionFinalToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(146, -4);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(627, 28);
+            menuStrip1.Size = new Size(477, 28);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -183,12 +186,23 @@
             reportesToolStripMenuItem.Text = "Reportes";
             reportesToolStripMenuItem.Click += button1_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 135);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(299, 269);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(782, 453);
+            Controls.Add(pictureBox1);
             Controls.Add(btnReportes);
             Controls.Add(btnDecision);
             Controls.Add(btnCerrarSesion);
@@ -203,6 +217,7 @@
             Text = "Sistema de Reclutamiento";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,5 +237,6 @@
         private ToolStripMenuItem entrevistasToolStripMenuItem;
         private ToolStripMenuItem decisionFinalToolStripMenuItem;
         private ToolStripMenuItem reportesToolStripMenuItem;
+        private PictureBox pictureBox1;
     }
 }

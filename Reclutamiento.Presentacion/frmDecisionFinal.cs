@@ -164,7 +164,14 @@ namespace Reclutamiento.Presentacion
 
                 byte[] cvBytes = await _candidatoServicio.ObtenerCVAsync(candidatoId);
 
-                byte[] pdfFinal = _reporteServicio.GenerarReporteDecisionFinal(decision, candidato, vacante, cvBytes);
+                byte[] logoBytes = null;
+                using (var ms = new MemoryStream())
+                {
+                    Properties.Resources.logosr.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    logoBytes = ms.ToArray();
+                }
+
+                byte[] pdfFinal = _reporteServicio.GenerarReporteDecisionFinal(decision, candidato, vacante, cvBytes, logoBytes);
 
                 using (SaveFileDialog sfd = new SaveFileDialog())
                 {

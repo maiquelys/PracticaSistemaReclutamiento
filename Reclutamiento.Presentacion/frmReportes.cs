@@ -21,7 +21,6 @@ namespace Reclutamiento.Presentacion
         private void frmReportes_Load(object sender, EventArgs e)
         {
             reportesToolStripMenuItem.Font = new Font(reportesToolStripMenuItem.Font, FontStyle.Bold);
-
         }
 
         // Reporte candidatos internos - usa lambda Func
@@ -67,7 +66,6 @@ namespace Reclutamiento.Presentacion
                     return;
                 }
 
-                // tomamos los encabezados visibles del grid (sin columnas ocultas)
                 var columnasVisibles = new System.Collections.Generic.List<DataGridViewColumn>();
                 foreach (DataGridViewColumn col in dgvReporte.Columns)
                 {
